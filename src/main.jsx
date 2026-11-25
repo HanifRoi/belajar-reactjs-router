@@ -10,13 +10,17 @@ import Customer from './Customer.jsx'
 import Data from './Data.jsx'
 import DataLayout from './DataLayout.jsx'
 import ProductDetail from './ProductDetail.jsx'
+import Image from './Image.jsx'
+import NotFound from './NotFound.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/*' element={<NotFound/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/images/*' element={<Image/>}/>
         <Route path='/data' element={<DataLayout/>}>
           <Route index element={<Data/>}/>
           <Route path='products' element={<Product/>}/>
